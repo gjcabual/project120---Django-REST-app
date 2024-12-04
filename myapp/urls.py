@@ -1,7 +1,7 @@
 # myapp/urls.py
 
 from django.urls import path
-from .views import SendMessageView, ReceiveMessageView, MessageFormView, ReceiveMessageFormView
+from .views import SendMessageView, ReceiveMessageView, MessageFormView
 
 
 urlpatterns = [

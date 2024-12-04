@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from myapp.views import MessageFormView
+from myapp.views import MessageFormView, ReceiveMessageFormView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', MessageFormView.as_view(), name='message_form'),
+    path('', ReceiveMessageFormView.as_view(), name='receive'),
     path('', include('myapp.urls')),
 ]
