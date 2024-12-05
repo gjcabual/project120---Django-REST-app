@@ -77,13 +77,15 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.mrnqbfwsbxitqbysircm',
-        'PASSWORD': 'djangoproject120group3',
-        'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
-        'PORT': '6543',
+        'NAME': 'ygvdpukredmdigjlifov',
+        'USER': 'postgres',
+        'PASSWORD': 'HzZgRgE8562tFkyh',
+        'HOST': 'ygvdpukredmdigjlifov.db.us-west-2.nhost.run',
+        'PORT': '5432',
     }
 }
+
+
 
 
 # Password validation
