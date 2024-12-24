@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
+    'myapp','rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ygvdpukredmdigjlifov',
+        'NAME': 'vvdqsgxhsloctbehbapj',
         'USER': 'postgres',
-        'PASSWORD': 'HzZgRgE8562tFkyh',
-        'HOST': 'ygvdpukredmdigjlifov.db.us-west-2.nhost.run',
+        'PASSWORD': '9cVUaA1hFWU1UNpb',
+        'HOST': 'vvdqsgxhsloctbehbapj.db.eu-west-2.nhost.run',
         'PORT': '5432',
     }
 }

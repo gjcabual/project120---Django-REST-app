@@ -5,32 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Receive Form</title>
     {% load static %}
-    <!-- Load the static template tag library -->
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-image: url('{% static "myapp/images/pic.jpg" %}'); /* Use the correct path */
-        background-size: cover; /* Make the image cover the entire background */
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-image: url('{% static "myapp/images/pic.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         margin: 0;
         padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: #fff; /* Change text color for better contrast */
+        color: #fff;
       }
       h1 {
         margin-bottom: 20px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
       }
       form {
-        background: rgba(
-          255,
-          255,
-          255,
-          0.9
-        ); /* Semi-transparent white background */
+        background: rgba(255, 255, 255, 0.9);
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -51,7 +45,6 @@
       }
       button {
         padding: 10px;
-        background-color: green;
         color: white;
         border: none;
         border-radius: 4px;
@@ -59,8 +52,27 @@
         cursor: pointer;
         transition: background-color 0.3s;
       }
-      button:hover {
+      .decrypt-button {
+        background-color: green;
+      }
+      .decrypt-button:hover {
         background-color: darkgreen;
+      }
+      .refresh-button {
+        background-color: blue;
+      }
+      .refresh-button:hover {
+        background-color: darkblue;
+      }
+      .clear-button {
+        background-color: red;
+      }
+      .clear-button:hover {
+        background-color: darkred;
+      }
+      .button-container {
+        display: flex;
+        justify-content: space-between;
       }
       @media (max-width: 400px) {
         h1 {
@@ -68,22 +80,44 @@
         }
         button {
           font-size: 14px;
+          width: 100%;
         }
       }
     </style>
   </head>
   <body>
     <h1>New message arrived!</h1>
-    <form action="{% url 'receive_message' %}" method="post">
+    <form action="{% url 'receive_message' %}" method="get">
       {% csrf_token %}
       <input
         type="text"
+        id="encrypted_message"
         name="encrypted_message"
-        placeholder="refresh to get latest encrypted message"
+        placeholder="Click refresh to Crack the Code!"
         required
         value="{% if latest_message %}{{ latest_message.encrypted_message }}{% endif %}"
       />
-      <button type="submit">Decrypt Message</button>
+      <div class="button-container">
+        <button type="button" class="refresh-button" onclick="refreshMessage()">
+          Refresh
+        </button>
+        <button type="submit" class="decrypt-button">Decrypt Message</button>
+        <button type="button" class="clear-button" onclick="clearInput()">
+          Clear
+        </button>
+      </div>
     </form>
+
+    <script>
+      function clearInput() {
+        document.getElementById("encrypted_message").value = "";
+      }
+
+      function refreshMessage() {
+        // Logic to refresh the message can go here
+        // For example, you could reload the page
+        location.reload();
+      }
+    </script>
   </body>
 </html>
