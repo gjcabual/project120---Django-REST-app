@@ -147,6 +147,10 @@ To verify messages/data in the database:
 
       ![View Data](https://drive.google.com/uc?export=view&id=1wYyrRAJo7elUU7-kGdiHob9Y-bC9PXoG)
 
+   > **Note:** To view the latest messages without being logged out, click "Select rows" in the table view. This refreshes the data without reloading the entire page, which would otherwise log you out.
+
+   ![Get Latest Message](https://drive.google.com/uc?export=view&id=1YBKV3W_xtPCHhrS8_SQQR9hlZCcezT4K)
+
 ## API Documentation
 
 ### Sender Application (Port 8000)
